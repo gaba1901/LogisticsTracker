@@ -1,0 +1,206 @@
+{
+  "vehicles": [
+    {
+      "plate": "ABC123",
+      "model": "Camión",
+      "color": "Blanco",
+      "brand": "Ford",
+      "loadCapacity": 5000
+    },
+    {
+      "plate": "XYZ789",
+      "model": "Camioneta",
+      "color": "Rojo",
+      "brand": "Toyota",
+      "loadCapacity": 3000
+    },
+    {
+      "plate": "IVZ009",
+      "model": " X TRAIL",
+      "color": "gris",
+      "brand": "NISSAN",
+      "loadCapacity": "2000"
+    },
+    {
+      "plate": "IVZ002",
+      "model": " X TRAIL",
+      "color": "gris",
+      "brand": "NISSAN",
+      "loadCapacity": "2000"
+    }
+  ],
+  "drivers": [
+    {
+      "id": "1",
+      "firstName": "Juan",
+      "lastName": "Pérez",
+      "licenseNumber": "C1",
+      "phone": "5551234",
+      "email": "juan@example.com"
+    },
+    {
+      "id": "2",
+      "firstName": "María",
+      "lastName": "Gómez",
+      "licenseNumber": "C1",
+      "phone": "5555678",
+      "email": "maria@example.com"
+    },
+    {
+      "id": "3",
+      "firstName": "David",
+      "lastName": "Guaba",
+      "licenseNumber": "C1",
+      "phone": "323",
+      "email": "312@asdsa"
+    },
+    {
+      "id": "4",
+      "firstName": "1231",
+      "lastName": "12312",
+      "phone": "12312",
+      "email": "312@asdsa"
+    },
+    {
+      "id": "6",
+      "firstName": "1231qweqw",
+      "lastName": "eqw",
+      "licenseNumber": "B1",
+      "phone": "12312eqw",
+      "email": "312@asdsa"
+    }
+  ],
+  "routes": [
+    {
+      "driverId": "1",
+      "vehiclePlate": "ABC123",
+      "date": "2025-02-10",
+      "routeDetails": [
+        {
+          "latitude": 4.574528,
+          "longitude": -74.214012,
+          "address": "Soacha - Punto A",
+          "packageNumber": 1
+        },
+        {
+          "latitude": 4.579052,
+          "longitude": -74.203312,
+          "address": "Soacha - Punto B",
+          "packageNumber": 2
+        },
+        {
+          "latitude": 4.586027,
+          "longitude": -74.199189,
+          "address": "Soacha - Punto C",
+          "packageNumber": 3
+        }
+      ]
+    },
+    {
+      "driverId": "2",
+      "vehiclePlate": "XYZ789",
+      "date": "2025-02-11",
+      "routeDetails": [
+        {
+          "latitude": 4.741357,
+          "longitude": -74.029961,
+          "address": "Bogotá Sur - Punto A",
+          "packageNumber": 1
+        },
+        {
+          "latitude": 4.732761,
+          "longitude": -74.023701,
+          "address": "Bogotá Sur - Punto B",
+          "packageNumber": 2
+        },
+        {
+          "latitude": 4.724115,
+          "longitude": -74.018065,
+          "address": "Bogotá Sur - Punto C",
+          "packageNumber": 3
+        }
+      ]
+    },
+    {
+      "driverId": "3",
+      "vehiclePlate": "IVZ009",
+      "date": "2025-02-21",
+      "routeDetails": [
+        {
+          "latitude": 4.758,
+          "longitude": -74.044,
+          "address": "Calle 1 #2-3, Bogotá",
+          "packageNumber": 1
+        },
+        {
+          "latitude": 4.759,
+          "longitude": -74.045,
+          "address": "Calle 4 #5-6, Bogotá",
+          "packageNumber": 2
+        }
+      ]
+    },
+    {
+      "vehiclePlate": "IVZ009",
+      "driverId": "3",
+      "date": "2025-02-14",
+      "routeDetails": [
+        {
+          "latitude": 4.757786586246297,
+          "longitude": -74.04488664305592,
+          "address": "Bodega de origen, Bogotá",
+          "packageNumber": 1
+        },
+        {
+          "latitude": 4.6872,
+          "longitude": -74.2127,
+          "address": "Primer punto intermedio: Soacha, Cundinamarca",
+          "packageNumber": 2
+        },
+        {
+          "latitude": 4.5833,
+          "longitude": -74.3841,
+          "address": "Segundo punto intermedio: San Antonio del Tequendama",
+          "packageNumber": 3
+        },
+        {
+          "latitude": 4.5798,
+          "longitude": -74.4791,
+          "address": "Destino final: Mesitas del Colegio, Cundinamarca",
+          "packageNumber": 4
+        }
+      ]
+    },
+    {
+      "vehiclePlate": "IVZ002",
+      "driverId": "3",
+      "date": "2025-02-22",
+      "routeDetails": [
+        {
+          "latitude": 4.757786586246297,
+          "longitude": -74.04488664305592,
+          "address": "Bodega de origen, Bogotá",
+          "packageNumber": 1
+        },
+        {
+          "latitude": 4.7788,
+          "longitude": -74.0644,
+          "address": "Primer punto intermedio: Calle 170, Bogotá",
+          "packageNumber": 2
+        },
+        {
+          "latitude": 4.8161,
+          "longitude": -74.0355,
+          "address": "Segundo punto intermedio: Peaje Autopista Norte",
+          "packageNumber": 3
+        },
+        {
+          "latitude": 4.8625,
+          "longitude": -74.0542,
+          "address": "Destino final: Chía, Cundinamarca",
+          "packageNumber": 4
+        }
+      ]
+    }
+  ]
+}

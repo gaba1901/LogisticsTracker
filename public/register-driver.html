@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registrar Conductor</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Gestión de Rutas</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+              <li class="nav-item"><a class="nav-link active" href="http://localhost:3000">Mapa</a></li>
+              <li class="nav-item"><a class="nav-link" href="register-vehicle.html">Registrar Vehículo</a></li>
+              <li class="nav-item"><a class="nav-link" href="register-driver.html">Registrar Conductor</a></li>
+              <li class="nav-item"><a class="nav-link" href="schedule-route.html">Programar Ruta</a></li>
+              <li class="nav-item"><a class="nav-link active" href="view-routes.html">Ver Rutas</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Formulario para registrar conductor -->
+  <div class="container mt-4">
+    <h2>Registrar Conductor</h2>
+    <form>
+      <div class="mb-3">
+        <label for="driverId" class="form-label">ID</label>
+        <input type="text" class="form-control" id="driverId" placeholder="ID">
+      </div>
+      <div class="mb-3">
+        <label for="firstName" class="form-label">Nombres</label>
+        <input type="text" class="form-control" id="firstName" placeholder="Nombres">
+      </div>
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Apellidos</label>
+        <input type="text" class="form-control" id="lastName" placeholder="Apellidos">
+      </div>
+      <div class="mb-3">
+        <label for="licenseNumber" class="form-label">Categoría de Licencia</label>
+        <input type="text" class="form-control" id="licenseNumber" placeholder="Ejemplo: C1, B1, etc.">
+      </div>
+      <div class="mb-3">
+        <label for="phone" class="form-label">Teléfono</label>
+        <input type="text" class="form-control" id="phone" placeholder="Teléfono">
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Correo</label>
+        <input type="email" class="form-control" id="email" placeholder="Correo">
+      </div>
+      <button type="submit" class="btn btn-primary">Registrar</button>
+    </form>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    document.querySelector("form").addEventListener("submit", (e) => {
+      e.preventDefault();
+  
+      // Capturar los datos del formulario
+      const id = document.getElementById("driverId").value;
+      const firstName = document.getElementById("firstName").value;
+      const lastName = document.getElementById("lastName").value;
+      const licenseNumber = document.getElementById("licenseNumber").value; // Cambiamos a licenseNumber aquí
+      const phone = document.getElementById("phone").value;
+      const email = document.getElementById("email").value;
+  
+      // Validar que todos los campos estén llenos
+      if (!id || !firstName || !lastName || !licenseNumber || !phone || !email) {
+        alert("Por favor, completa todos los campos.");
+        return;
+      }
+  
+      // Enviar los datos al servidor
+      fetch("/api/drivers", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, firstName, lastName, licenseNumber, phone, email }),
+      })
+        .then((response) => {
+          if (!response.ok) throw new Error("Error al registrar el conductor");
+          return response.json();
+        })
+        .then((data) => {
+          alert(data.message); // Mostrar mensaje de éxito
+          document.querySelector("form").reset(); // Limpiar formulario
+        })
+        .catch((error) => console.error("Error:", error));
+    });
+  </script>
+  
+  
+  
+  
+</body>
+</html>
